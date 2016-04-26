@@ -2,7 +2,7 @@
 
 #if USE_GRAIN
 
-#pragma "MassFX: Grain Initialized\n"
+#pragma message "MassFX: Grain Initialized\n"
 
 namespace MassFX {
 		
