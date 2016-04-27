@@ -18,9 +18,13 @@ namespace MassFX {
 		coord.xy = color.rg * 15 * lutSize + 0.5 * lutSize;
 		coord.x += coord.w * lutSize.y;
 		return lerp(
-			tex2D(sLUT, coord.xy).rgb, 
-			tex2D(sLUT, coord.xy + float2(lutSize.y, 0)).rgb, 
-			color.b - coord.w
+			tex2Dfetch(ReShade::BackBuffer, i.uv).rgb,
+			lerp(
+				tex2D(sLUT, coord.xy).rgb, 
+				tex2D(sLUT, coord.xy + float2(lutSize.y, 0)).rgb, 
+				color.b - coord.w
+			), 
+			LUT_Power
 		);
 	}
 	
