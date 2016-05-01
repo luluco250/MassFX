@@ -11,7 +11,7 @@ namespace MassFX {
 	
 	float3 Main(v2f i) : SV_Target {
 		float2 lutSize = 1 / float2(LUT_ResX, LUT_ResY);
-		float3 color = tex2D(ReShade::BackBuffer, i.uv).rgb;
+		float3 color = saturate(tex2D(ReShade::BackBuffer, i.uv).rgb);
 		color.b *= 15;
 		float4 coord = 0;
 		coord.w = floor(color.b);

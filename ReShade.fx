@@ -12,7 +12,7 @@
 
 #pragma reshade screenshot_key RESHADE_SCREENSHOT_KEY
 #pragma reshade screenshot_format RESHADE_SCREENSHOT_FORMAT
-//#pragma reshade screenshot_path "\\MassFX\\Screenshots" doesn't seem to work
+#pragma reshade screenshot_path "\\MassFX\\Screenshots"
 
 #if RESHADE_SHOW_FPS
 	#pragma reshade showfps
